@@ -1,11 +1,13 @@
 class StocksController < ApplicationController
+	before_action :authenticate_user!
+
 	def new
 		@stock = Stock.new
 	end
 	def create
 		@stock = Stock.new(stock_params)
 		if @stock.save
-			redirect_to stock_path(@stock)
+			redirect_to stocks_path
 		else
 			render 'new'
 		end

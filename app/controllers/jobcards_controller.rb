@@ -1,13 +1,14 @@
 class JobcardsController < ApplicationController
+	before_action :authenticate_user!
+
 	def new
-		binding.pry
 		stock = Stock.find_by_id(params[:stock_id])
 		@jobcard = stock.jobcards.new
 	end
 	def create
 		@jobcard = Jobcard.new(jobcard_params)
 		if @jobcard.save
-			redirect_to jobcard_path(@jobcard)
+			redirect_to stock_jobcard_path(@jobcard.stock_id, @jobcard.id)
 		else
 			render 'new'
 		end
@@ -20,6 +21,6 @@ class JobcardsController < ApplicationController
 	end
 	private
 		def jobcard_params
-		params.require(:jobcard).permit(:dated, :press_name, :quantity_rim, :paper_type, :size, :article_num, :print_quantity)
+		params.require(:jobcard).permit(:dated, :press_name, :quantity_rim, :paper_type, :size, :article_num, :print_quantity, :stock_id)
 	end
 end

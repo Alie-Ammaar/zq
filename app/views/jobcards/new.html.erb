@@ -1,11 +1,11 @@
 <%= render 'shared/errors', obj: @jobcard %>
 <h2 align="center">Create Job Cards</h2>
-<%= form_for @jobcard, html: {class: 'form-horizontal'} do |f| %>
+<%= form_for @jobcard, url: stock_jobcards_path, html: {class: 'form-horizontal'} do |f| %>
 <div class="container">
 <div class="form-group">
 		<%= f.label :Dated, class: "col-sm-2 control-label" %>
 		<div class="col-sm-6">
-			<%= f.datetime_select :dated, class: "form-control" %>
+			<%= f.date_field :dated, value: Date.today, readonly: true, class: "form-control" %>
 		</div>
 </div>
 <div class="form-group">
@@ -42,8 +42,10 @@
 		<%= f.label :print_quantity, class: "col-sm-2 control-label" %>
 		<div class="col-sm-6">
 			<%= f.number_field :print_quantity, class: "form-control", min: 1  %>
+			<%= f.hidden_field :stock_id, value: @jobcard.stock_id.to_i  %>
 		</div>
 </div>
+	
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
         <%= f.submit "Create", class: "btn btn-primary" %>
