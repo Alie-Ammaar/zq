@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dated: 2017-07-19 03:38:08
+  press_name: MyString
+  quantity_rim: 1
+  size: MyString
+  paper_type: MyString
+  article_num: MyString
+  print_quantity: 1
+  stock: 
+
+two:
+  dated: 2017-07-19 03:38:08
+  press_name: MyString
+  quantity_rim: 1
+  size: MyString
+  paper_type: MyString
+  article_num: MyString
+  print_quantity: 1
+  stock: 

@@ -1,0 +1,12 @@
+<h2>Update record</h2>
+<%= form_for @stock do |f|%>
+	<%= f.label :paper_from, "Supplier" %>
+	<%= f.text_field :paper_from %>
+	<%= f.label :paper_type, "Paper type" %>
+	<%= f.text_field :paper_type %>
+	<%= f.label :quantity, "Quantity" %>
+	<%= f.number_field :quantity %>
+	<%= f.label :size, "Size" %>
+	<%= f.number_field :size %>
+	<%= f.submit "Save"%>
+<%end%>

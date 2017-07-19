@@ -1,0 +1,53 @@
+<%= render 'shared/errors', obj: @jobcard %>
+<h2 align="center">Create Job Cards</h2>
+<%= form_for @jobcard, html: {class: 'form-horizontal'} do |f| %>
+<div class="container">
+<div class="form-group">
+		<%= f.label :Dated, class: "col-sm-2 control-label" %>
+		<div class="col-sm-6">
+			<%= f.datetime_select :dated, class: "form-control" %>
+		</div>
+</div>
+<div class="form-group">
+		<%= f.label :press_name, class: "col-sm-2 control-label" %>
+		<div class="col-sm-6">
+			<%= f.text_field :press_name, class: "form-control" %>
+		</div>
+</div>
+<div class="form-group">
+		<%= f.label :quantity_rim, class: "col-sm-2 control-label" %>
+		<div class="col-sm-6">
+			<%= f.number_field :quantity_rim, class: "form-control", min: 1 %>
+		</div>
+</div>
+<div class="form-group">
+		<%= f.label :paper_type, class: "col-sm-2 control-label" %>
+		<div class="col-sm-6">
+			<%= f.text_field :paper_type, class: "form-control" %>
+		</div>
+</div>
+<div class="form-group">
+		<%= f.label :size, class: "col-sm-2 control-label" %>
+		<div class="col-sm-6">
+			<%= f.number_field :size, class: "form-control", min: 1  %>
+		</div>
+</div>
+<div class="form-group">
+		<%= f.label :article_num, class: "col-sm-2 control-label" %>
+		<div class="col-sm-6">
+			<%= f.text_field :article_num, class: "form-control" %>
+		</div>
+</div>
+<div class="form-group">
+		<%= f.label :print_quantity, class: "col-sm-2 control-label" %>
+		<div class="col-sm-6">
+			<%= f.number_field :print_quantity, class: "form-control", min: 1  %>
+		</div>
+</div>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+        <%= f.submit "Create", class: "btn btn-primary" %>
+    </div>
+</div>
+</div>
+<%end%>

@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170716193259) do
+ActiveRecord::Schema.define(version: 20170718223807) do
+
+  create_table "jobcards", force: :cascade do |t|
+    t.datetime "dated"
+    t.string   "press_name"
+    t.integer  "quantity_rim"
+    t.string   "size"
+    t.string   "paper_type"
+    t.string   "article_num"
+    t.integer  "print_quantity"
+    t.integer  "stock_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["stock_id"], name: "index_jobcards_on_stock_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.text     "paper_from"
+    t.string   "paper_type"
+    t.integer  "quantity"
+    t.integer  "size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

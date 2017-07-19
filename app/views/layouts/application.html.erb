@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Zq</title>
+    <title>Zia ul Quran Publications</title>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -14,6 +16,8 @@
   <% end %>
 
   <%= render 'layouts/navigation'%>
+
     <%= yield %>
+  <%= render 'layouts/footer'%>
   </body>
 </html>
