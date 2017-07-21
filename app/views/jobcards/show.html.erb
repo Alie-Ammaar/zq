@@ -1,13 +1,27 @@
-<h2>Showing job card asssigned</h2>
-<div class="row">
-		<div align="center" class="well ">
-			Dated : <%= @jobcard.dated%><br>
-			Press Name : <%= @jobcard.press_name%><br>
-			Rim Quntity : <%= @jobcard.quantity_rim%><br>
-			Size : <%= @jobcard.size%><br>
-			Paper Type : <%= @jobcard.paper_type %><br>
-			Article Number : <%= @jobcard.article_num %><br>
-			Print Quantity : <%= @jobcard.print_quantity %><br>
-			Stock : <%= @jobcard.stock_id %><hr>
+<h2 align="center">Showing job card asssigned</h2>
+<div  align= "center" class="container">
+	<div align="center" class="well">
+		<table id="stocks_listings">
+		
+			<tr>
+				<th>Date</th>
+				<th>Supplier</th>
+				<th>Quantity Rim</th>
+				<th>Size</th>
+				<th>Paper Quality</th>
+				<th>Print Count</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td><%= @jobcard.dated%></td>
+				<td><%= @jobcard.press_name%></td>
+				<td><%= @jobcard.quantity_rim%></td>
+				<td><%= @jobcard.size%></td>
+				<td><%= @jobcard.paper_type %></td>
+				<td><%= @jobcard.print_quantity %></td>
+				<td><%= @jobcard.article_num %></td>
+			</tr>
 		</div>	
+	</table>
 	</div>
+</div>
