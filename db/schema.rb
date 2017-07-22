@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721052105) do
+ActiveRecord::Schema.define(version: 20170722073007) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 20170721052105) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "bills", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "num_of_plates"
+    t.integer "num_0f_colors"
+    t.decimal "rate", precision: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "jobcards", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "dated"
     t.string "press_name"
@@ -54,6 +62,8 @@ ActiveRecord::Schema.define(version: 20170721052105) do
     t.integer "stock_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "bill_id"
+    t.index ["bill_id"], name: "index_jobcards_on_bill_id"
     t.index ["stock_id"], name: "index_jobcards_on_stock_id"
   end
 
@@ -83,4 +93,5 @@ ActiveRecord::Schema.define(version: 20170721052105) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "jobcards", "bills"
 end

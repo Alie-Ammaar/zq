@@ -1,0 +1,23 @@
+<h2 align="center">Listing all the bills</h2>
+	<div  align= "center" class="container">
+		<div align="center" class="well">	
+			<table id="stocks_listings">
+				<tr>
+				<th>Number of Plates</th>
+				<th>Color Print</th>
+				<th>Number of Print</th>
+				<th>Price per Print</th>
+				<th>Article Number</th>
+				<th></th>				
+				</tr>
+				<% @bill.each do |bill| %>
+				<tr>
+				<td><%= bill.num_of_plates %></td>
+				<td><%= bill.num_0f_colors %></td>
+				<td><%= %></td>
+				<td><%= bill.rate %></td>
+				</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
