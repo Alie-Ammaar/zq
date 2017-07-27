@@ -1,7 +1,7 @@
 class JobcardsController < ApplicationController
 	before_action :authenticate_user!
 	def index
-		@jobcard = Jobcard.all
+		@jobcards = Jobcard.all
 	end
 
 	def new
@@ -12,8 +12,8 @@ class JobcardsController < ApplicationController
 	def create
 		@jobcard = Jobcard.new(jobcard_params)
 		if @jobcard.save
-			redirect_to  new_bill_path 
-			# redirect_to stock_jobcard_path(@jobcard.stock_id, @jobcard.id)
+			#redirect_to  new_bill_path 
+			redirect_to stock_jobcard_path(@jobcard.stock_id, @jobcard.id)
 		else
 			render 'new'
 		end

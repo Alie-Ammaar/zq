@@ -4,7 +4,7 @@
 		<div align="center" class="well">	
 			<table id="stocks_listings">
 					<tr>
-						<th>Supplier</th>
+						<!-- <th>Supplier</th> -->
 						<th>Quality</th>
 						<th>Size</th>
 						<th>Quantity</th>
@@ -14,11 +14,15 @@
 					<div class="container">
 						<div class="row">	
 							<tr>
-							<td><%= stock.paper_from %></td>
+							<!-- <td><%= stock.paper_from %></td> -->
 							<td><%= stock.paper_type %></td>
 							<td><%= stock.size %></td>
 							<td><%= stock.quantity %></td>
-							<td><%= link_to "Create", new_stock_jobcard_path(stock)%></td>
+							<% if stock.quantity > 0 %>
+								<td><%= link_to "Create JobCard", new_stock_jobcard_path(stock)%></td>
+							<% else %>
+								<td>Stock is Empty / <%= link_to "Update Stock",  edit_stock_path(stock) %></td>
+							<% end %>
 							</div>
 							</tr>
 						</div>

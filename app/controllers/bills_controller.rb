@@ -1,6 +1,7 @@
 class BillsController < ApplicationController
   def new
-  	@bill = Bill.new
+  	jobcard = Jobcard.find_by_id(params[:jobcard_id])
+    @bill = jobcard.bills.new
   end
   
   def create

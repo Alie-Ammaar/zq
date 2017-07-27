@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root to: 'home#index'	
   devise_for :users, :controllers => {sessions: 'users/sessions', registrations: 'users/registrations',confirmations: 'users/confirmations' }
   resources :stocks do
-  resources :jobcards 
+  	resources :jobcards do
+  		resources :bills
+  	end
   end
-  resources :bills
+  
 end

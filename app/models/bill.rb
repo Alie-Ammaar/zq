@@ -1,3 +1,3 @@
 class Bill < ApplicationRecord
-	belongs_to :jobcard	
+  belongs_to :jobcard
 end

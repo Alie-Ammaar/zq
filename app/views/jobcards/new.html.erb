@@ -2,47 +2,65 @@
 <h2 align="center">Create Job Cards</h2>
 <%= form_for @jobcard, url: stock_jobcards_path, html: {class: 'form-horizontal'} do |f| %>
 <div class="container">
-<div class="form-group">
+		<div class="form-group">
 		<%= f.label :Dated, class: "col-xs-offset-1 col-xs-2 control-label" %>
 		<div class="col-xs-5">
 			<%= f.date_field :dated, value: Date.today, readonly: true, class: "form-control" %>
 		</div>
-</div>
-<div class="form-group">
+		</div>
+		<div class="form-group">
 		<%= f.label :Press_name, class: "col-xs-offset-1 col-xs-2 control-label" %>
 		<div class="col-xs-6">
 			<%= f.text_field :press_name, class: "form-control" %>
 		</div>
-</div>
-<div class="form-group">
+		</div>
+		<div class="form-group">
 		<%= f.label :Quantity_rim, class: "col-xs-offset-1 col-xs-2 control-label" %>
 		<div class="col-xs-6">
-			<%= f.number_field :quantity_rim, class: "form-control", min: 1 %>
+			<%= f.number_field :quantity_rim, class: "form-control", min: 1, max: @jobcard.stock.quantity %>
 		</div>
-</div>
-<div class="form-group">
+		</div>
+		<div class="form-group">
 		<%= f.label :Paper_type, class: "col-xs-offset-1 col-xs-2 control-label" %>
 		<div class="col-xs-6">
-			<%= f.text_field :paper_type, class: "form-control" %>
+			<%= f.text_field :paper_type, value: @jobcard.stock.paper_type, readonly: true, class: "form-control" %>
 		</div>
-</div>
-<div class="form-group">
+		</div>
+		<div class="form-group">
 		<%= f.label :Size, class: "col-xs-offset-1 col-xs-2 control-label" %>
 		<div class="col-xs-6">
-			<%= f.number_field :size, class: "form-control", min: 1  %>
+			<%= f.number_field :size, value: @jobcard.stock.size, readonly: true, class: "form-control", min: 1  %>
 		</div>
-</div>
-<div class="form-group">
+		</div>
+		<div class="form-group">
 		<%= f.label :Article_num, class: "col-xs-offset-1 col-xs-2 control-label" %>
 		<div class="col-xs-6">
 			<%= f.text_field :article_num, class: "form-control" %>
 		</div>
-</div>
-<div class="form-group">
+		</div>
+		<div class="form-group">
+		<%= f.label :"Number of plates", class: "col-xs-offset-1 col-xs-2 control-label" %>
+		<div class="col-xs-5">
+		<%= f.number_field :dated, class: "form-control", min: 1 %>
+		</div>
+		</div>
+		<div class="form-group">
+		<%= f.label :"Number Of Colors", class: "col-xs-offset-1 col-xs-2 control-label" %>
+		<div class="col-xs-5">
+		<%= f.number_field :dated, class: "form-control", min: 1 %>
+		</div>
+		</div>
+		<div class="form-group">
+		<%= f.label :"Rate for printing", class: "col-xs-offset-1 col-xs-2 control-label" %>
+		<div class="col-xs-5">
+		<%= f.number_field :dated, class: "form-control", min: 1 %>
+		</div>
+		</div>
+		<div class="form-group">
 		<%= f.label :Print_quantity, class: "col-xs-offset-1 col-xs-2 control-label" %>
 		<div class="col-xs-6">
-			<%= f.number_field :print_quantity, class: "form-control", min: 1  %>
-			<%= f.hidden_field :stock_id, value: @jobcard.stock_id.to_i  %>
+		<%= f.number_field :print_quantity, class: "form-control", min: 1  %>
+		<%= f.hidden_field :stock_id, value: @jobcard.stock_id.to_i  %>
 		</div>
 </div>
 	

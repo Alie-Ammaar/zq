@@ -1,1 +1,29 @@
 <h2 align="center">Listing All Jobcards</h2>
+	<div  align= "center" class="container">
+		<div align="center" class="well">
+			<table id="stocks_listings">
+				<tr>
+					<th>Date</th>
+					<th>Deliverd to Press</th>
+					<th>Quantity in RIM</th>
+					<th>Paper Size</th>
+					<th>Paper Quality</th>
+					<th>Number of prints</th>
+					<th>Article Number</th>
+					<th>Actions</th>
+				</tr>
+				<% @jobcards.each do |jobcard| %>
+					<tr>
+						<td><%= jobcard.dated%></td>
+						<td><%= jobcard.press_name%></td>
+						<td><%= jobcard.quantity_rim%></td>
+						<td><%= jobcard.size%></td>
+						<td><%= jobcard.paper_type %></td>
+						<td><%= jobcard.print_quantity %></td>
+						<td><%= jobcard.article_num %></td>
+						<td><%= link_to "View",  stock_jobcard_path(jobcard.stock.id, jobcard.id)  %> / <%= link_to "Create Bill",  new_stock_jobcard_bill_path(jobcard.stock, jobcard) %></td>
+					</tr>
+				<%end%>	
+			</table>
+		</div>
+	</div>
