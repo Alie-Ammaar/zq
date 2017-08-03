@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'bill/new'
+  # get 'bill/show' to: 'bill#show'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

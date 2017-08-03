@@ -19,7 +19,7 @@
 						<td><%= jobcard.quantity_rim%></td>
 						<td><%= jobcard.size%></td>
 						<td><%= jobcard.paper_type %></td>
-						<td><%= jobcard.print_quantity %></td>
+						<td><%= jobcard.prints %></td>
 						<td><%= jobcard.article_num %></td>
 						<td><%= link_to "View",  stock_jobcard_path(jobcard.stock.id, jobcard.id)  %> / <%= link_to "Create Bill",  new_stock_jobcard_bill_path(jobcard.stock, jobcard) %></td>
 					</tr>

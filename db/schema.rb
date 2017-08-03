@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170723210251) do
+ActiveRecord::Schema.define(version: 20170731085838) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -64,6 +64,12 @@ ActiveRecord::Schema.define(version: 20170723210251) do
     t.integer "stock_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "plates"
+    t.integer "colors"
+    t.integer "prints"
+    t.integer "rate"
+    t.bigint "total_bill"
+    t.integer "gramage"
     t.index ["stock_id"], name: "index_jobcards_on_stock_id"
   end
 
@@ -74,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170723210251) do
     t.integer "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gramage"
   end
 
   create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

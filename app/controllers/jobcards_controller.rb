@@ -10,6 +10,7 @@ class JobcardsController < ApplicationController
 	end
 
 	def create
+
 		@jobcard = Jobcard.new(jobcard_params)
 		if @jobcard.save
 			#redirect_to  new_bill_path 
@@ -29,6 +30,6 @@ class JobcardsController < ApplicationController
 
 	private
 		def jobcard_params
-		params.require(:jobcard).permit(:dated, :press_name, :quantity_rim, :paper_type, :size, :article_num, :print_quantity, :stock_id)
+		params.require(:jobcard).permit(:dated, :press_name, :quantity_rim, :paper_type, :size, :article_num, :prints, :stock_id, :rate, :plates, :colors, :gramage)
 	end
 end

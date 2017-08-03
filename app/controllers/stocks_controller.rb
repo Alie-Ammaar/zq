@@ -43,6 +43,6 @@ class StocksController < ApplicationController
 
 	private
 		def stock_params
-			params.require(:stock).permit(:paper_from, :paper_type, :quantity, :size)
+			params.require(:stock).permit(:paper_from, :paper_type, :quantity, :size, :gramage)
 		end
 end
