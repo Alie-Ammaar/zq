@@ -15,7 +15,7 @@ production:
   <<: *default
   adapter: postgresql
   # adapter: mysql2
-  database: adsapp_production
+  database: zq_production
   # database: adsapp_production_dev
   username: root
   password: 

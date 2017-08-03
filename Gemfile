@@ -12,7 +12,6 @@ gem 'rails', '~> 5.1.1'
 gem 'devise'
 
 
-gem 'mysql2', '~> 0.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -49,9 +48,11 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'mysql2', '~> 0.4.4'
+
 end
 group :production do 
-	gem 'pg'
+	gem 'mysql2', '~> 0.4.4'
 	gem 'rails_12factor'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
