@@ -1,7 +1,10 @@
 class BillsController < ApplicationController
+
   def new
+    
+    stock = Stock.find_by_id(params[:stock_id])
   	jobcard = Jobcard.find_by_id(params[:jobcard_id])
-    @bill = jobcard.bills.new
+    @bill = stock.jobcards.bills.new
   end
   
   def create
